@@ -1,0 +1,31 @@
+---
+const res = await fetch("https://portal.supergirosnortedelvalle.com/api/resultados")
+const { resultados } = await res.json()
+
+// console.log(resultados)
+import "../styles/global.css"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>SSR Astro</title>
+	</head>
+	<body>
+		<h1>SSR Dashboard lottery</h1>
+		<section class="container">
+			{
+				resultados.map(lottery => (
+					<article>
+						<h3>{lottery.lottery.display_name}</h3>
+						<p>{lottery.number}</p>
+						<b>{lottery.zodiac_sign}</b>
+						</article>
+						))
+					}
+		</section>
+	</body>
+</html>
