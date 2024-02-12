@@ -2,7 +2,7 @@
 const res = await fetch("https://portal.supergirosnortedelvalle.com/api/resultados")
 const { resultados } = await res.json()
 
-// console.log(resultados)
+console.log(resultados)
 import "../styles/global.css"
 ---
 
@@ -23,6 +23,7 @@ import "../styles/global.css"
 						<h3>{lottery.lottery.display_name}</h3>
 						<p>{lottery.number}</p>
 						<b>{lottery.zodiac_sign}</b>
+						<span>{lottery.played_at}</span>
 						</article>
 						))
 					}
